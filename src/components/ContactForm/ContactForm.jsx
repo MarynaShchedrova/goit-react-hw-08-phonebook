@@ -9,7 +9,7 @@ import { Button, Heading, Text } from '@chakra-ui/react';
 export const ContactForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
-  const [phone, setNumber] = useState('');
+  const [number, setNumber] = useState('');
   const contacts = useSelector(getContacts);
 
   const handleChange = event => {
@@ -19,7 +19,7 @@ export const ContactForm = () => {
       case 'name':
         setName(value);
         break;
-      case 'phone':
+      case 'number':
         setNumber(value);
         break;
       default:
@@ -29,11 +29,11 @@ export const ContactForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (name && phone) {
+    if (name && number) {
       if (contacts.find(el => el.name === name)) {
         return toast.error(`${name} is already in contacts`);
       }
-      dispatch(addContact({ name, phone }));
+      dispatch(addContact({ name, number }));
       setName('');
       setNumber('');
     }
@@ -59,7 +59,7 @@ export const ContactForm = () => {
         className={css.formName}
         type="tel"
         name="number"
-        value={phone}
+        value={number}
         onChange={handleChange}
         placeholder="number"
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
