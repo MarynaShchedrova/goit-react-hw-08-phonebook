@@ -1,4 +1,4 @@
-import { useAuth } from 'hooks';
+import { useAuth } from 'hooks/useAuth.js';
 import { StyledLink } from './Navigation.styled';
 
 export const Navigation = () => {
@@ -9,11 +9,7 @@ export const Navigation = () => {
       <StyledLink end to="/">
         Home
       </StyledLink>
-      {isLoggedIn && (
-        <StyledLink to="/contacts">
-          Contacts
-        </StyledLink>
-      )}
+      {isLoggedIn && <StyledLink to="/contacts">Contacts</StyledLink>}
     </nav>
   );
 };
