@@ -5,7 +5,7 @@ import { Layout } from './Layout';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from 'redux/auth/operations';
-import { useAuth } from 'hooks/useAuth.js';
+import { useAuth } from '../hooks';
 import { loader } from './Loader/Loader';
 
 const HomePage = lazy(() => import('../pages/Home'));
