@@ -1,4 +1,4 @@
-import { useAuth } from 'hooks/useAuth.js';
+import { useAuth } from '../../hooks/useAuth';
 import { StyledLink } from './Navigation.styled';
 
 export const Navigation = () => {
